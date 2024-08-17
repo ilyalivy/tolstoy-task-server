@@ -23,8 +23,8 @@ if (process.env.NODE_ENV === 'production') {
     });
     app.use(limiter);
 
-    const csrfProtection = csurf({ cookie: true });
-    app.use('/fetch-metadata', csrfProtection);
+    // const csrfProtection = csurf({ cookie: true });
+    // app.use('/fetch-metadata', csrfProtection);
 } else if (process.env.NODE_ENV === 'test') {
     app.use((req, res, next) => {
         req.csrfToken = () => 'test-csrf-token';
